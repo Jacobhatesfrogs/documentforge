@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DocumentForge — AI Grant & Proposal Writer</title>
+<meta name="description" content="DocumentForge is a browser-based AI document generator that writes complete grant applications and RFP responses in seconds. No subscription. No data storage. Buy once, use forever.">
+<meta property="og:title" content="DocumentForge — AI Grant & Proposal Writer">
+<meta property="og:description" content="Generate complete, professional grant applications and RFP responses in seconds using your own Anthropic API key. No subscription. No monthly fees.">
+<meta property="og:url" content="https://documentforge.netlify.app">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DocumentForge — AI Grant & Proposal Writer">
+<meta name="twitter:description" content="Generate complete grants and proposals in seconds. No subscription. Buy once, use forever.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -611,9 +619,77 @@ section { padding: 80px 0; }
 }
 .usecase-desc { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
 
-/* ═══════════════════════════════
-   DEAL SECTION
-═══════════════════════════════ */
+/* COMPARE GRID */
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+.compare-card {
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+}
+.compare-card.bad {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+}
+.compare-card.good {
+  background: var(--gold-dim);
+  border: 1px solid rgba(201,168,76,0.35);
+  position: relative;
+}
+.compare-card.good::before {
+  content: '✦ BEST VALUE';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #0a0a10;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.compare-icon { font-size: 28px; margin-bottom: 12px; }
+.compare-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+.compare-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.compare-card.bad .compare-price { color: var(--red); opacity: 0.8; }
+.compare-card.good .compare-price { color: var(--gold2); }
+.compare-price span {
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  color: var(--text-dim);
+}
+.compare-note {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+@media (max-width: 768px) { .compare-grid { grid-template-columns: 1fr; } }
+
+
 .deal { background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%); border-top: 1px solid var(--border); }
 .deal-box {
   background: var(--surface);
@@ -892,8 +968,9 @@ footer {
       DocumentForge is a <strong>browser-based AI document generator</strong> that writes complete, professional grant applications and RFP responses using your own Anthropic API key. <strong>No subscription. No data storage. Yours forever.</strong>
     </p>
     <div class="hero-cta">
-      <a href="#deal" class="btn-primary">Get DocumentForge — Lifetime Deal →</a>
+      <a href="https://documentsforge.gumroad.com/l/crnnb" target="_blank" class="btn-primary">Get DocumentForge — Lifetime Deal →</a>
       <div class="hero-note">One-time purchase · No monthly fees · Works immediately</div>
+    </div>
 
     <div class="stats-row">
       <div class="stat">
@@ -933,15 +1010,15 @@ footer {
         <div class="problem-pains">
           <div class="pain-item">
             <div class="pain-icon">⏳</div>
-            <div class="pain-text"><strong>Hours of blank-page paralysis</strong>Every section starts from scratch. The needs statement, the evaluation plan, the budget narrative — all written manually, every time.</div>
+            <div class="pain-text"><strong>Hours of blank-page paralysis</strong> Every section starts from scratch. The needs statement, the evaluation plan, the budget narrative — all written manually, every time.</div>
           </div>
           <div class="pain-item">
             <div class="pain-icon">💸</div>
-            <div class="pain-text"><strong>Grant writers are expensive</strong>Small nonprofits and startups can't always afford $5,000–$15,000 per proposal. So they either don't apply, or apply poorly.</div>
+            <div class="pain-text"><strong>Grant writers are expensive</strong> Small nonprofits and startups can't always afford $5,000–$15,000 per proposal. So they either don't apply, or apply poorly.</div>
           </div>
           <div class="pain-item">
             <div class="pain-icon">🔄</div>
-            <div class="pain-text"><strong>Rewriting the same content repeatedly</strong>Your mission, your programs, your accomplishments — rewritten in slightly different words for every new funder.</div>
+            <div class="pain-text"><strong>Rewriting the same content repeatedly</strong> Your mission, your programs, your accomplishments — rewritten in slightly different words for every new funder.</div>
           </div>
         </div>
       </div>
@@ -949,7 +1026,7 @@ footer {
         <div class="callout-quote">
           "We spent <span>3 weeks</span> writing our last federal grant. With DocumentForge, we had a full draft in under 10 minutes."
         </div>
-        <div class="callout-stat">— What your workflow looks like after DocumentForge</div>
+        <div class="callout-stat">— Imagine this being your workflow</div>
       </div>
     </div>
   </div>
@@ -1080,7 +1157,7 @@ footer {
       <div class="feature-card">
         <span class="feature-icon">🏗️</span>
         <div class="feature-title">No Account Required</div>
-        <p class="feature-desc">Open the file, paste your API key, generate. <strong>No registration, no login, no dashboard</strong>. It's a single HTML file that works offline after initial load.</p>
+        <p class="feature-desc">Open the file, paste your API key, generate. <strong>No registration, no login, no dashboard</strong>. It's a single HTML file — nothing to install, nothing to update manually.</p>
       </div>
     </div>
   </div>
@@ -1194,9 +1271,30 @@ footer {
 ═══════════════════════ -->
 <section class="deal" id="deal">
   <div class="container">
-    <div class="section-label">The Deal</div>
+    <div class="section-label">What's Included</div>
     <h2 class="section-title">Pay once. <em>Use forever.</em></h2>
     <p class="section-body">No subscriptions. No per-seat pricing. No usage caps from us. You own DocumentForge outright and generate as many documents as you want using your own Anthropic API key.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card bad">
+        <div class="compare-icon">👤</div>
+        <div class="compare-label">Freelance Grant Writer</div>
+        <div class="compare-price">$75–$150<span>/hour</span></div>
+        <div class="compare-note">One federal grant = 40–80 hrs = $5,000–$15,000 per application. No guarantee of success.</div>
+      </div>
+      <div class="compare-card bad">
+        <div class="compare-icon">💳</div>
+        <div class="compare-label">AI Writing Subscriptions</div>
+        <div class="compare-price">$49–$199<span>/month</span></div>
+        <div class="compare-note">Generic tools not built for grants or proposals. You pay every month whether you use it or not.</div>
+      </div>
+      <div class="compare-card good">
+        <div class="compare-icon">⚡</div>
+        <div class="compare-label">DocumentForge</div>
+        <div class="compare-price">$49<span> once</span></div>
+        <div class="compare-note">Purpose-built for grants and proposals. Pay once, generate unlimited documents forever. AI costs fractions of a cent.</div>
+      </div>
+    </div>
 
     <div class="deal-box">
       <div class="deal-header">
@@ -1218,7 +1316,7 @@ footer {
         <div class="deal-pricing">
           <div class="deal-price-block">
             <div class="deal-now-label">One-Time Purchase</div>
-            <div class="deal-price" style="font-size:32px;margin-bottom:10px;">Buy Once. Use Forever.</div>
+            <div class="deal-price">$49</div>
             <div class="deal-price-sub">No subscription · No usage caps · No monthly fees from us</div>
           </div>
           <div style="margin-bottom:16px;">
@@ -1227,11 +1325,8 @@ footer {
             <div class="deal-item" style="margin-bottom:8px;font-size:13px;"><div class="deal-check">✓</div><div>Grant on Sonnet: <strong style="color:var(--green);">~$0.04</strong></div></div>
             <div class="deal-item" style="margin-bottom:0;font-size:13px;"><div class="deal-check">✓</div><div>You control every dollar spent — no markup from us</div></div>
           </div>
-          <div class="deal-guarantee">
-            <div class="deal-guarantee-icon">🛡️</div>
-            <div><strong>Satisfaction guaranteed.</strong> If DocumentForge doesn't deliver, reach out and we'll make it right.</div>
-          </div>
-          <a href="#" class="deal-cta">Get DocumentForge →</a>
+
+          <a href="https://documentsforge.gumroad.com/l/crnnb" target="_blank" class="deal-cta">Get DocumentForge →</a>
         </div>
       </div>
     </div>
@@ -1253,7 +1348,12 @@ footer {
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-a">
-          Anthropic is the company that makes Claude, the AI model powering DocumentForge. To use it, you create a free account at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>, add a payment method, and generate an API key. You'll only pay for what you use — a full grant proposal typically costs between $0.002 and $0.04 depending on which model you choose. There's no monthly commitment.
+          Anthropic is the company that makes Claude — the AI model powering DocumentForge. Here's exactly how to get set up in under 5 minutes:
+          <br><br>
+          <strong>Step 1 —</strong> Go to <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> and click <strong>Sign Up</strong>. Create a free account with your email address.<br><br>
+          <strong>Step 2 —</strong> Once logged in, go to <strong>Settings → Billing</strong> and add a credit card. Anthropic requires a payment method before generating a key. We recommend adding $5–$10 in credits to start — that's enough for hundreds of generations.<br><br>
+          <strong>Step 3 —</strong> Go to <strong>API Keys</strong> in the left sidebar and click <strong>Create Key</strong>. Give it a name (e.g. "DocumentForge"), copy it, and paste it into DocumentForge. Your key starts with <strong>sk-ant-</strong>.<br><br>
+          That's it — you're connected. You'll only pay for what you use. A full grant proposal on Haiku costs around <strong>$0.002</strong> (less than a penny). On Sonnet it's around <strong>$0.04</strong>. There's no subscription, no monthly minimum, and no charges from us — ever. Everything goes directly to Anthropic.
         </div>
       </div>
       <div class="faq-item">
@@ -1320,13 +1420,13 @@ footer {
 <div class="footer-cta">
   <div class="container">
     <h2 class="footer-cta-title">Your next grant is<br><em>already written.</em></h2>
-    <p class="footer-cta-sub">Get DocumentForge and generate professionally written grants and proposals in minutes, not weeks.</p>
-    <a href="#deal" class="btn-primary">Get Lifetime Access →</a>
+    <p class="footer-cta-sub">Get DocumentForge for $49 — one-time. Generate professionally written grants and proposals in minutes, not weeks.</p>
+    <a href="https://documentsforge.gumroad.com/l/crnnb" target="_blank" class="btn-primary">Get Lifetime Access — $49 →</a>
   </div>
 </div>
 
 <footer>
-  DocumentForge &mdash; AI Grant &amp; Proposal Generator &mdash; Lifetime Deal
+  DocumentForge &mdash; AI Grant &amp; Proposal Generator &mdash; &copy; 2026
 </footer>
 
 <script>
